@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Your Name</title>
+    <!-- MathJax Configuration -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; min-height: 100vh;">
+
+    <!-- Sidebar Navigation -->
+    <nav style="width: 200px; background-color: #333; color: #fff; padding-top: 60px; position: fixed; left: 0; top: 0; height: 100%;">
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin: 20px 0; text-align: center;">
+                <a href="../index.html" style="color: #fff; text-decoration: none; font-size: 18px; display: block; padding: 10px;">Introduction</a>
+            </li>
+            <li style="margin: 20px 0; text-align: center;">
+                <a href="experience.html" style="color: #fff; text-decoration: none; font-size: 18px; display: block; padding: 10px;">Experience</a>
+            </li>
+            <li style="margin: 20px 0; text-align: center;">
+                <a href="publications.html" style="color: #fff; text-decoration: none; font-size: 18px; display: block; padding: 10px; background-color: #444; border-radius: 4px;">Publications</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 20px; margin-left: 200px;">
+        <h1>Publications</h1>
+        
+        <h2>Understanding Integrated Gradients</h2>
+        <p>Integrated Gradients (IG) is a method for attributing the prediction of a deep network to its input features. It provides a way to understand which features are most influential in the model's decision-making process.</p>
+        
+        <h3>Mathematical Definition</h3>
+        <p>The Integrated Gradients for the <em>i<sup>th</sup></em> input feature is defined as:</p>
+        <p>
+            $$
+            IG_i(x) = (x_i - x'_i) \times \int_{\alpha=0}^{1} \frac{\partial F(x' + \alpha \times (x - x'))}{\partial x_i} d\alpha
+            $$
+        </p>
+        <p>Where:</p>
+        <ul>
+            <li><strong>x</strong> is the input vector.</li>
+            <li><strong>x'</strong> is the baseline input (e.g., all zeros).</li>
+            <li><strong>F</strong> is the model's output function.</li>
+            <li><strong>α</strong> is a scalar that interpolates between the baseline and the input.</li>
+        </ul>
+        
+        <h3>Discrete Approximation</h3>
+        <p>In practice, the integral is approximated using a summation:</p>
+        <p>
+            $$
+            IG_i(x) \approx (x_i - x'_i) \times \frac{1}{m} \sum_{k=1}^{m} \frac{\partial F(x'_k)}{\partial x_i}
+            $$
+        </p>
+        <p>Where <strong>m</strong> is the number of steps in the approximation.</p>
+        
+        <!-- Add more publications or explanations as needed -->
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: #fff; text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; left: 0;">
+        &copy; 2024 Your Name. All rights reserved.
+    </footer>
+
+</body>
+</html>
